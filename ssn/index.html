@@ -24,138 +24,9 @@
     }
 
     </script>
-    <style type="text/css">
-
-/* Styles to replicate key LODS styles */
-
-ul.hlist {
-  list-style-type:none;
-  background-color: #eee;
-}
-ul.hlist li {
-  display:inline;
-  margin-right: 1em;
-  font-size:smaller;
-}
-.entity {
-  border: 0px solid black;
-  padding: 1.5em;
-  margin-top: 1.5em;
-}
-.entity h4 {
-  margin-top:0;
-}
-.entity dl {
-  border: dashed thin black;
-  border-width:0px 0;
-  background-color:#eee;
-  margin: 0 0.5em;
-}
-p.iri::before {
-  content: "IRI: ";
-  font-weight: bold;
-  font-family:sans-serif;
-}
-p.iri {
-  font-family:monospace;
-}
-span.logic {
-  font-weight:bold;
-  color:purple;
-}
-span.dotted {
-  text-decoration-line:underline;
-  text-decoration-style: dotted;
-  text-decoration-color:black;
-}
-
-/* Styles to replicate key SpecGen styles */
-
-.specterm {
-    margin-top: 1em;
-}
-
-.specterm h4 {
-    margin-top: 1em;
-}
-
-.specterm table {
-    margin-top: 0.5em;
-}
-
-div.specterm {
-    border: 0px solid navy;
-    background:     #e3dcf2;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    padding-top: 0.1ex;
-    padding-bottom: 0.1ex;
-}
-
-.azlist {
-  margin-top: 10pt;
-  padding: 5px;
-  border: 1px solid navy;
-  background-color: #e6f2ff;
-}
-
-
-/* Styles added by Kerry for formatting code including ttl */
-.tab1 {
- text-indent: 24pt;
-}
-.tab2 {
- text-indent: 48pt;
-}
-.tab3 {
- text-indent: 72pt;
-}
-.tab4 {
- text-indent: 96pt;
-}
-.tab5 {
- text-indent: 120pt;
-}
-
-/* Styles added by Simon for clean table borders */
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-div.sosa, div.sosa th{
-    background-color: #c7eae5;
-}
-
-div.ssn, div.ssn th, tr.ssn, tr.ssn th {
-    background-color: #67a9cf;
-}
-
-
-.buttonpanel {
-    margin-top: 1ex;
-    margin-bottom: 1ex;
-    padding-left: 1ex;
-    padding-right: 1ex;
-    padding-top: 1ex;
-    padding-bottom: 0.6ex;
-    border: 0px dotted black;
-}
-</style> </head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="small.css" media="only all and (max-width: 649px)">
+    </head>
   <body prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# skos: http://www.w3.org/2004/02/skos/core# dcterms: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/>. vann: http://purl.org/vocab/vann/ voaf: http://purl.org/vocommons/voaf# time: http://www.w3.org/2006/time# sosa: http://www.w3.org/ns/sosa/ ssn: http://www.w3.org/ns/ssn/">
 
     <section id="abstract">
@@ -272,7 +143,10 @@ their usage are given.</p>
         statements, whereby we distinguish two methods depending on the
         directionality of the segmentation: a vertical segmentation and a
         horizontal segmentation.</p>
-      <figure><img alt="Ontology Modules" src="images/modular_ontology.png"> <figcaption>The SOSA and SSN ontologies and their vertical and horizontal modules.</figcaption></figure>
+      <figure>
+        <a href="images/modular_ontology.png"><img alt="Ontology Modules" src="images/modular_ontology.png"></a>
+        <figcaption>The SOSA and SSN ontologies and their vertical and horizontal modules.</figcaption>
+      </figure>
       <h3 id="vertical-segmentation">Vertical Segmentation</h3>
       <p>Vertical modules build upon each other, i.e., they directionally <code>owl:import</code>
         lower level modules. Lower level modules are independent of their higher
@@ -386,9 +260,25 @@ their usage are given.</p>
       <h2>Axiomatization</h2>
       <section>
         <p>This section introduces the specifications for SOSA and SSN.</p>
-          <div class="note">
-              More figures describing individual components, classes and their relationships within the final SOSA ontology and the SSN ontology are planned to be included in the final recommendation document.
-          </div>
+
+<p>Several conceptual modules have been defined to cover key sensor, actuation and sampling concepts. The different conceptual modules of SOSA/SSN can be seen in the following figure.
+<p>
+
+        <figure>
+          <a href="images/SSN-OntStructure-Overview.png"><img alt="SOSA/SSN ontology modules - overview" src="images/SSN-OntStructure-Overview.png"></a>
+          <figcaption>Overview of the SOSA/SSN ontology modules</figcaption>
+        </figure>
+
+<p>An overview of the main classes and properties inside the ontology modules can be seen in the following figure, focusing on the Stimulus-Sensor-Observation pattern. The overall behaviour is identical for the Actuation and Sampling patterns.  
+<br>
+In the figures, and in the rest of the document, SOSA-related components and restrictions are shown in green, while SSN-only components are shown in blue. 
+</p>
+
+        <figure>
+          <a href="images/images/SSN-OntStructure.png"><img alt="SOSA/SSN ontology modules" src="images/SSN-OntStructure.png"></a>
+          <figcaption>Overview of the SOSA/SSN classes and properties</figcaption>
+        </figure>
+
       </section>
         
       <section>
@@ -473,7 +363,7 @@ their usage are given.</p>
         <div class="azlist">
           <p>Object Properties:
             | <a href="#SOSAactsOnProperty">sosa:actsOnProperty</a>
-            | <a href="#SOSAactuationMadeBy">sosa:actuationMadeBy</a>
+            | <a href="#SOSAmadeByActuator">sosa:madeByActuator</a>
             <span class="ssn">| <a href="#SSNdeployedOnPlatform">ssn:deployedOnPlatform</a></span>
             <span class="ssn">| <a href="#SSNdeployedSystem">ssn:deployedSystem</a> </span>
             <span class="ssn">| <a href="#SSNdetects">ssn:detects</a> </span>
@@ -485,8 +375,8 @@ their usage are given.</p>
             <span class="ssn">| <a href="#SSNhasOperatingProperty">ssn:hasOperatingProperty</a></span>
             <span class="ssn">| <a href="#SSNhasOperatingRange">ssn:hasOperatingRange</a> </span>
             <span class="ssn">| <a href="#SSNhasProperty">ssn:hasProperty</a></span>
-            | <a href="#SOSAhasResult">sosa:hasResult</a>
-            | <a href="#SOSAhasResultingSample">sosa:hasResultingSample</a>
+            | <a href="#SOSAhasResult">sosa:hasResult</a> 
+<!--            | <a href="#SOSAhasResultingSample">sosa:hasResultingSample</a> -->
             | <a href="#SOSAhasSample">sosa:hasSample</a>
             <span class="ssn">| <a href="#SSNhasSubSystem">ssn:hasSubSystem</a> </span>
             <span class="ssn">| <a href="#SSNhasSurvivalProperty">ssn:hasSurvivalProperty</a></span>
@@ -506,7 +396,7 @@ their usage are given.</p>
             <span class="ssn">| <a href="#SSNisProxyFor">ssn:isProxyFor</a></span>
             | <a href="#SOSAisResultOf">sosa:isResultOf</a>
             | <a href="#SOSAisSampleOf">sosa:isSampleOf</a>
-            | <a href="#SOSAisSamplingResultOf">sosa:isSamplingResultOf</a>
+<!--            | <a href="#SOSAisSamplingResultOf">sosa:isSamplingResultOf</a> -->
             | <a href="#SOSAmadeActuation">sosa:madeActuation</a>
             | <a href="#SOSAmadeBySampler">sosa:madeBySampler</a>
             | <a href="#SOSAmadeBySensor">sosa:madeBySensor</a>
@@ -560,12 +450,19 @@ their usage are given.</p>
         </div>
 
 
-        <p>To ease readability, the following figure provides an 
-     overview over the (SOSA) core classes and properties that are specifically 
-    related to modeling Observations.</p>
+        <p>To ease readability, the following figures provide an 
+     overview over the core classes and properties that are specifically 
+    related to modeling Observations, first in SOSA and then in SOSA/SSN.</p>
 
-        <figure><img alt="Observation" src="images/observation-activity.png"> <figcaption>Classes
-            and relationships involved in Observation</figcaption></figure>
+        <figure>
+          <a href="images/SOSA-Observation.png"><img alt="Observation (SOSA)" src="images/SOSA-Observation.png"></a>
+          <figcaption>Classes and relationships involved in Observation (SOSA)</figcaption>
+        </figure>
+
+        <figure class="ssn">
+          <a href="images/SSN-Observation.png"><img alt="Observation (SOSA/SSN)" src="images/SSN-Observation.png"></a>
+          <figcaption>Classes and relationships involved in Observation (SOSA/SSN)</figcaption>
+        </figure>
 
           <div class="specterm sosa" id="SOSAObservableProperty" about="sosa:ObservableProperty" typeof="owl:Class rdfs:Class">
             <h4>OWL Class: <a href="http://www.w3.org/ns/sosa/ObservableProperty">sosa:ObservableProperty</a></h4>
@@ -637,7 +534,7 @@ their usage are given.</p>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation1]"></span>
                       <span about="[_:SOSAObservation1]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSAObservation1]" rel="owl:onProperty" resource="sosa:madeBySensor"><a href="#SOSAmadeBySensor">sosa:madeBySensor</a></span>
-                      <span about="[_:SOSAObservation1]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="#SOSASensor">sosa:Sensor</a></span>
+                      <span about="[_:SOSAObservation1]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                       <br>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation2]"></span>
                       <span about="[_:SOSAObservation2]" typeof="owl:Restriction"></span>
@@ -652,7 +549,7 @@ their usage are given.</p>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation4]"></span>
                       <span about="[_:SOSAObservation4]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSAObservation4]" rel="owl:onProperty" resource="sosa:hasFeatureOfInterest"><a href="#SOSAhasFeatureOfInterest">sosa:hasFeatureOfInterest</a></span>
-                      <span about="[_:SOSAObservation4]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="#SOSAFeatureOfInterest">sosa:FeatureOfInterest</a></span>
+                      <span about="[_:SOSAObservation4]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                       <br>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation5]"></span>
                       <span about="[_:SOSAObservation5]" typeof="owl:Restriction"></span>
@@ -662,7 +559,7 @@ their usage are given.</p>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation6]"></span>
                       <span about="[_:SOSAObservation6]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSAObservation6]" rel="owl:onProperty" resource="sosa:observedProperty"><a href="#SOSAobservedProperty">sosa:observedProperty</a></span>
-                      <span about="[_:SOSAObservation6]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="#SOSAObservableProperty">sosa:ObservableProperty</a></span>
+                      <span about="[_:SOSAObservation6]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                       <br>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation7]"></span>
                       <span about="[_:SOSAObservation7]" typeof="owl:Restriction"></span>
@@ -672,7 +569,7 @@ their usage are given.</p>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation8]"></span>
                       <span about="[_:SOSAObservation8]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSAObservation8]" rel="owl:onProperty" resource="ssn:wasOriginatedBy"><a href="#SSNwasOriginatedBy">ssn:wasOriginatedBy</a></span>
-                      <span about="[_:SOSAObservation8]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="#SSNStimulus">ssn:Stimulus</a></span>
+                      <span about="[_:SOSAObservation8]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                       <br>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation9]"></span>
                       <span about="[_:SOSAObservation9]" typeof="owl:Restriction"></span>
@@ -682,12 +579,12 @@ their usage are given.</p>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation10]"></span>
                       <span about="[_:SOSAObservation10]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSAObservation10]" rel="owl:onProperty" resource="sosa:phenomenonTime"><a href="#SOSAphenomenonTime">sosa:phenomenonTime</a></span>
-                      <span about="[_:SOSAObservation10]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="http://www.w3.org/2006/time#TemporalEntity">time:TemporalEntity</a></span>
+                      <span about="[_:SOSAObservation10]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                       <br>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation11]"></span>
                       <span about="[_:SOSAObservation11]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSAObservation11]" rel="owl:onProperty" resource="sosa:hasResult"><a href="#SOSAhasResult">sosa:hasResult</a></span>
-                      <span about="[_:SOSAObservation11]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSAResult">sosa:Result</a></span>
+                      <span about="[_:SOSAObservation11]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                       <br>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation12]"></span>
                       <span about="[_:SOSAObservation12]" typeof="owl:Restriction"></span>
@@ -697,7 +594,7 @@ their usage are given.</p>
                       <span about="sosa:Observation" rel="rdfs:subClassOf" resource="[_:SOSAObservation13]"></span>
                       <span about="[_:SOSAObservation13]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSAObservation13]" rel="owl:onProperty" resource="sosa:resultTime"><a href="#SOSAresultTime">sosa:resultTime</a></span>
-                      <span about="[_:SOSAObservation13]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="https://www.w3.org/TR/xmlschema-2/#dateTime">xsd:dateTime</a></span>
+                      <span about="[_:SOSAObservation13]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                     </td>
                   </tr>
                   </tbody>
@@ -808,7 +705,7 @@ their usage are given.</p>
                         <span about="sosa:Sensor" rel="rdfs:subClassOf" resource="[_:SOSASensor4]"></span>
                         <span about="[_:SOSASensor4]" typeof="owl:Restriction"></span>
                         <span about="[_:SOSASensor4]" rel="owl:onProperty" resource="ssn:implements"><a href="#SSNimplements">ssn:implements</a></span>
-                        <span about="[_:SOSASensor4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSAProcedure">sosa:Procedure</a></span>
+                        <span about="[_:SOSASensor4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                         <br>
                         <span about="sosa:Sensor" rel="rdfs:subClassOf" resource="[_:SOSASensor2]"></span>
                         <span about="[_:SOSASensor2]" typeof="owl:Restriction"></span>
@@ -1085,7 +982,7 @@ their usage are given.</p>
              <a href="#SOSAisActedOnBy">sosa:isActedOnBy</a>,
              <a href="#SOSAActuator">sosa:Actuator</a>,
              <a href="#SOSAmadeActuation">sosa:madeActuation</a>,
-             <a href="#SOSAactuationMadeBy">sosa:actuationMadeBy</a>            
+             <a href="#SOSAmadeByActuator">sosa:madeByActuator</a>            
           </p>
           <div class="buttonpanel">
             <button type="button" class="hide-ssn" onclick="hide_ssn(true)">Show only core SOSA terms</button>
@@ -1093,12 +990,19 @@ their usage are given.</p>
           </div>
         </div>
 
-          <p>To ease readability, the following figure provides an 
-       overview over the (SOSA) core classes and properties that are specifically 
-      related to modeling Actuations.</p>
+          <p>To ease readability, the following figures provide an 
+       overview over the core classes and properties that are specifically 
+      related to modeling Actuations, first in SOSA and then in SOSA/SSN.</p>
 
-          <figure><img alt="Actuation" src="images/actuation-activity.png"> <figcaption>Classes
-              and relationships involved in Actuation</figcaption></figure>
+          <figure>
+            <a href="images/SOSA-Actuation.png"><img alt="Actuation (SOSA)" src="images/SOSA-Actuation.png"></a>
+            <figcaption>Classes and relationships involved in Actuation (SOSA)</figcaption>
+          </figure>
+
+          <figure class="ssn">
+            <a href="images/SSN-Actuation.png"><img alt="Actuation (SOSA/SSN)" src="images/SSN-Actuation.png"></a>
+            <figcaption>Classes and relationships involved in Actuation (SOSA/SSN)</figcaption>
+          </figure>
 
           <div class="specterm sosa" id="SOSAActuatableProperty" about="sosa:ActuatableProperty" typeof="owl:Class rdfs:Class">
               <h4>OWL Class: <a href="http://www.w3.org/ns/sosa/ActuatableProperty">sosa:ActuatableProperty</a></h4>
@@ -1158,12 +1062,12 @@ their usage are given.</p>
                   <td>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation1]"></span>
                     <span about="[_:SOSAActuation1]" typeof="owl:Restriction"></span>
-                    <span about="[_:SOSAActuation1]" rel="owl:onProperty" resource="sosa:actuationMadeBy"><a href="#SOSAactuationMadeBy">sosa:actuationMadeBy</a></span>
-                    <span about="[_:SOSAActuation1]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="#SOSAActuator">sosa:Actuator</a></span>
+                    <span about="[_:SOSAActuation1]" rel="owl:onProperty" resource="sosa:madeByActuator"><a href="#SOSAmadeByActuator">sosa:madeByActuator</a></span>
+                    <span about="[_:SOSAActuation1]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                     <br>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation2]"></span>
                     <span about="[_:SOSAActuation2]" typeof="owl:Restriction"></span>
-                    <span about="[_:SOSAActuation2]" rel="owl:onProperty" resource="sosa:actuationMadeBy"><a href="#SOSAactuationMadeBy">sosa:actuationMadeBy</a></span>
+                    <span about="[_:SOSAActuation2]" rel="owl:onProperty" resource="sosa:madeByActuator"><a href="#SOSAmadeByActuator">sosa:madeByActuator</a></span>
                     <span about="[_:SOSAActuation2]" property="owl:allValuesFrom" resource="sosa:Actuator"><em><b>must be</b></em> <a href="#SOSAActuator">sosa:Actuator</a></span>
                     <br>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation3]"></span>
@@ -1174,7 +1078,7 @@ their usage are given.</p>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation4]"></span>
                     <span about="[_:SOSAActuation4]" typeof="owl:Restriction"></span>
                     <span about="[_:SOSAActuation4]" rel="owl:onProperty" resource="sosa:hasFeatureOfInterest"><a href="#SOSAhasFeatureOfInterest">sosa:hasFeatureOfInterest</a></span>
-                    <span about="[_:SOSAActuation4]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="#SOSAFeatureOfInterest">sosa:FeatureOfInterest</a></span>
+                    <span about="[_:SOSAActuation4]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                     <br>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation5]"></span>
                     <span about="[_:SOSAActuation5]" typeof="owl:Restriction"></span>
@@ -1184,7 +1088,7 @@ their usage are given.</p>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation6]"></span>
                     <span about="[_:SOSAActuation6]" typeof="owl:Restriction"></span>
                     <span about="[_:SOSAActuation6]" rel="owl:onProperty" resource="sosa:actsOnProperty"><a href="#SOSAactsOnProperty">sosa:actsOnProperty</a></span>
-                    <span about="[_:SOSAActuation6]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="#SOSAActuatableProperty">sosa:ActuatableProperty</a></span>
+                    <span about="[_:SOSAActuation6]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                     <br>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation7]"></span>
                     <span about="[_:SOSAActuation7]" typeof="owl:Restriction"></span>
@@ -1194,7 +1098,7 @@ their usage are given.</p>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation11]"></span>
                     <span about="[_:SOSAActuation11]" typeof="owl:Restriction"></span>
                     <span about="[_:SOSAActuation11]" rel="owl:onProperty" resource="sosa:hasResult"><a href="#SOSAhasResult">sosa:hasResult</a></span>
-                    <span about="[_:SOSAActuation11]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSAResult">sosa:Result</a></span>
+                    <span about="[_:SOSAActuation11]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                     <br>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation12]"></span>
                     <span about="[_:SOSAActuation12]" typeof="owl:Restriction"></span>
@@ -1204,7 +1108,7 @@ their usage are given.</p>
                     <span about="sosa:Actuation" rel="rdfs:subClassOf" resource="[_:SOSAActuation13]"></span>
                     <span about="[_:SOSAActuation13]" typeof="owl:Restriction"></span>
                     <span about="[_:SOSAActuation13]" rel="owl:onProperty" resource="sosa:resultTime"><a href="#SOSAresultTime">sosa:resultTime</a></span>
-                    <span about="[_:SOSAActuation13]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="https://www.w3.org/TR/xmlschema-2/#dateTime">xsd:dateTime</a></span>
+                    <span about="[_:SOSAActuation13]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                   </td>
                 </tr>
                 </tbody>
@@ -1305,7 +1209,7 @@ their usage are given.</p>
                       <span about="sosa:Actuator" rel="rdfs:subClassOf" resource="[_:SOSAActuator4]"></span>
                       <span about="[_:SOSAActuator4]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSAActuator4]" rel="owl:onProperty" resource="ssn:implements"><a href="#SSNimplements">ssn:implements</a></span>
-                      <span about="[_:SOSAActuator4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSAProcedure">sosa:Procedure</a></span>
+                      <span about="[_:SOSAActuator4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                       <br>
                       <span about="sosa:Actuator" rel="rdfs:subClassOf" resource="[_:SOSAActuator2]"></span>
                       <span about="[_:SOSAActuator2]" typeof="owl:Restriction"></span>
@@ -1345,7 +1249,7 @@ their usage are given.</p>
                   <tr>
                     <th>Inverse property of</th>
                     <td>
-                      <span rel="owl:inverseOf" resource="sosa:actuationMadeBy"><a href="#SOSAactuationMadeBy">sosa:actuationMadeBy</a></span></td>
+                      <span rel="owl:inverseOf" resource="sosa:madeByActuator"><a href="#SOSAmadeByActuator">sosa:madeByActuator</a></span></td>
                   </tr>
                 </tbody>
               </table>
@@ -1355,11 +1259,11 @@ their usage are given.</p>
           <button type="button" class="show-ssn" style="display: none" onclick="hide_ssn(false)">Show additional SSN axioms</button>
         </div></div>
 
-        <div class="specterm sosa" id="SOSAactuationMadeBy" about="sosa:actuationMadeBy" typeof="owl:ObjectProperty">
-              <h4>OWL Object Property: <a href="http://www.w3.org/ns/sosa/actuationMadeBy">sosa:actuationMadeBy</a></h4>
-              <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/sosa/actuationMadeBy</p>
+        <div class="specterm sosa" id="SOSAmadeByActuator" about="sosa:madeByActuator" typeof="owl:ObjectProperty">
+              <h4>OWL Object Property: <a href="http://www.w3.org/ns/sosa/madeByActuator">sosa:madeByActuator</a></h4>
+              <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/sosa/madeByActuator</p>
 
-              <em property="rdfs:label">actuation made by</em> -
+              <em property="rdfs:label">made by actuator</em> -
               <span property="rdfs:comment skos:definition">Relation linking an <a href="#SOSAActuation"><code>Actuation</code></a> to the <a href="#SOSAActuator"><code>Actuator</code></a> that made that <a href="#SOSAActuation"><code>Actuation</code></a>.</span>
               <br>
               <table style="th { float: top; }">
@@ -1398,8 +1302,8 @@ their usage are given.</p>
              <a href="#SOSAisSampleOf">sosa:isSampleOf</a>,
              <a href="#SOSASampling">sosa:Sampling</a>,
              <a href="#SOSASampler">sosa:Sampler</a>,
-             <a href="#SOSAhasResultingSample">sosa:hasResultingSample</a>,
-             <a href="#SOSAisSamplingResultOf">sosa:isSamplingResultOf</a>,
+<!--             <a href="#SOSAhasResultingSample">sosa:hasResultingSample</a>,
+             <a href="#SOSAisSamplingResultOf">sosa:isSamplingResultOf</a>, -->
              <a href="#SOSAmadeSampling">sosa:madeSampling</a>,
              <a href="#SOSAmadeBySampler">sosa:madeBySampler</a>
           </p>
@@ -1409,12 +1313,19 @@ their usage are given.</p>
           </div>
         </div>
 
-        <p>To ease readability, the following figure provides an 
-     overview over the (SOSA) core classes and properties that are specifically 
-    related to modeling Sampling.</p>
+        <p>To ease readability, the following figures provide an 
+     overview over the core classes and properties that are specifically 
+    related to modeling Sampling, first in SOSA and then in SOSA/SSN.</p>
 
-        <figure><img alt="Sampling and samples" src="images/sampling-activity.png">
-            <figcaption>Classes and relationships involved in Sampling</figcaption></figure>
+        <figure>
+          <a href="images/SOSA-Sampling.png"><img alt="Sampling and samples (SOSA)" src="images/SOSA-Sampling.png"></a>
+          <figcaption>Classes and relationships involved in Sampling (SOSA)</figcaption>
+        </figure>
+
+        <figure class="ssn">
+          <a href="images/SSN-Sampling.png"><img alt="Sampling and samples (SOSA/SSN)" src="images/SSN-Sampling.png"></a>
+          <figcaption>Classes and relationships involved in Sampling (SOSA/SSN)</figcaption>
+        </figure>
 
         <div class="specterm sosa" id="SOSASample" about="sosa:Sample" typeof="owl:Class rdfs:Class">
               <h4>OWL Class: <a href="http://www.w3.org/ns/sosa/Sample">sosa:Sample</a></h4>
@@ -1450,12 +1361,12 @@ their usage are given.</p>
                   <td>
                     <span about="sosa:Sample" rel="rdfs:subClassOf" resource="[_:SOSASample1]"></span>
                     <span about="[_:SOSASample1]" typeof="owl:Restriction"></span>
-                    <span about="[_:SOSASample1]" rel="owl:onProperty" resource="sosa:isSamplingResultOf"><a href="#SOSAisSamplingResultOf">sosa:isSamplingResultOf</a></span>
+                    <span about="[_:SOSASample1]" rel="owl:onProperty" resource="sosa:isResultOf"><a href="#SOSAisResultOf">sosa:isResultOf</a></span>
                     <span about="[_:SOSASample1]" property="owl:allValuesFrom" resource="sosa:Sampling"><em><b>must be</b></em> <a href="#SOSASampling">sosa:Sampling</a></span>
                     <br>
                     <span about="sosa:Sample" rel="rdfs:subClassOf" resource="[_:SOSASample2]"></span>
                     <span about="[_:SOSASample2]" typeof="owl:Restriction"></span>
-                    <span about="[_:SOSASample2]" rel="owl:onProperty" resource="sosa:isSamplingResultOf"><a href="#SOSAisSamplingResultOf">sosa:isSamplingResultOf</a></span>
+                    <span about="[_:SOSASample2]" rel="owl:onProperty" resource="sosa:isResultOf"><a href="#SOSAisResultOf">sosa:isResultOf</a></span>
                     <span about="[_:SOSASample2]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSASampling">sosa:Sampling</a></span>
                     <br>
                     <span about="sosa:Sample" rel="rdfs:subClassOf" resource="[_:SOSASample3]"></span>
@@ -1466,7 +1377,7 @@ their usage are given.</p>
                     <span about="sosa:Sample" rel="rdfs:subClassOf" resource="[_:SOSASample4]"></span>
                     <span about="[_:SOSASample4]" typeof="owl:Restriction"></span>
                     <span about="[_:SOSASample4]" rel="owl:onProperty" resource="sosa:isSampleOf"><a href="#SOSAisSampleOf">sosa:isSampleOf</a></span>
-                    <span about="[_:SOSASample4]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSAFeatureOfInterest">sosa:FeatureOfInterest</a></span>
+                    <span about="[_:SOSASample4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                     <br>
                   </td>
                 </tr>
@@ -1579,7 +1490,7 @@ their usage are given.</p>
                       <span about="sosa:Sampling" rel="rdfs:subClassOf" resource="[_:SOSASampling1]"></span>
                       <span about="[_:SOSASampling1]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSASampling1]" rel="owl:onProperty" resource="sosa:madeBySampler"><a href="#SOSAmadeBySampler">sosa:madeBySampler</a></span>
-                      <span about="[_:SOSASampling1]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="#SOSASampler">sosa:Sampler</a></span>
+                      <span about="[_:SOSASampling1]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                       <br>
                       <span about="sosa:Sampling" rel="rdfs:subClassOf" resource="[_:SOSASampling2]"></span>
                       <span about="[_:SOSASampling2]" typeof="owl:Restriction"></span>
@@ -1594,7 +1505,7 @@ their usage are given.</p>
                       <span about="sosa:Sampling" rel="rdfs:subClassOf" resource="[_:SOSASampling4]"></span>
                       <span about="[_:SOSASampling4]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSASampling4]" rel="owl:onProperty" resource="sosa:hasFeatureOfInterest"><a href="#SOSAhasFeatureOfInterest">sosa:hasFeatureOfInterest</a></span>
-                      <span about="[_:SOSASampling4]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="#SOSAFeatureOfInterest">sosa:FeatureOfInterest</a></span>
+                      <span about="[_:SOSASampling4]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                       <br>
                       <span about="sosa:Sampling" rel="rdfs:subClassOf" resource="[_:SOSASampling5]"></span>
                       <span about="[_:SOSASampling5]" typeof="owl:Restriction"></span>
@@ -1603,18 +1514,18 @@ their usage are given.</p>
                       <br>
                       <span about="sosa:Sampling" rel="rdfs:subClassOf" resource="[_:SOSASampling11]"></span>
                       <span about="[_:SOSASampling11]" typeof="owl:Restriction"></span>
-                      <span about="[_:SOSASampling11]" rel="owl:onProperty" resource="sosa:hasResultingSample"><a href="#SOSAhasResultingSample">sosa:hasResultingSample</a></span>
+                      <span about="[_:SOSASampling11]" rel="owl:onProperty" resource="sosa:hasResult"><a href="#SOSAhasResult">sosa:hasResult</a></span>
                       <span about="[_:SOSASampling11]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSASample">sosa:Sample</a></span>
                       <br>
                       <span about="sosa:Sampling" rel="rdfs:subClassOf" resource="[_:SOSASampling12]"></span>
                       <span about="[_:SOSASampling12]" typeof="owl:Restriction"></span>
-                      <span about="[_:SOSASampling12]" rel="owl:onProperty" resource="sosa:hasResultingSample"><a href="#SOSAhasResultingSample">sosa:hasResultingSample</a></span>
+                      <span about="[_:SOSASampling12]" rel="owl:onProperty" resource="sosa:hasResult"><a href="#SOSAhasResult">sosa:hasResult</a></span>
                       <span about="[_:SOSASampling12]" property="owl:allValuesFrom" resource="sosa:Sample"><em><b>must be</b></em> <a href="#SOSASample">sosa:Sample</a></span>
                       <br>
                       <span about="sosa:Sampling" rel="rdfs:subClassOf" resource="[_:SOSASampling13]"></span>
                       <span about="[_:SOSASampling13]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSASampling13]" rel="owl:onProperty" resource="sosa:resultTime"><a href="#SOSAresultTime">sosa:resultTime</a></span>
-                      <span about="[_:SOSASampling13]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em> <a href="https://www.w3.org/TR/xmlschema-2/#dateTime">xsd:dateTime</a></span>
+                      <span about="[_:SOSASampling13]" property="owl:cardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be exactly 1</b></em></span>
                     </td>
                   </tr>
                 </tbody>
@@ -1648,7 +1559,7 @@ their usage are given.</p>
                       <span about="sosa:Sampler" rel="rdfs:subClassOf" resource="[_:SOSASampler4]"></span>
                       <span about="[_:SOSASampler4]" typeof="owl:Restriction"></span>
                       <span about="[_:SOSASampler4]" rel="owl:onProperty" resource="ssn:implements"><a href="#SSNimplements">ssn:implements</a></span>
-                      <span about="[_:SOSASampler4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSAProcedure">sosa:Procedure</a></span>
+                      <span about="[_:SOSASampler4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                       <br>
                       <span about="sosa:Sampler" rel="rdfs:subClassOf" resource="[_:SOSASampler1]"></span>
                       <span about="[_:SOSASampler1]" typeof="owl:Restriction"></span>
@@ -1664,7 +1575,7 @@ their usage are given.</p>
           <button type="button" class="show-ssn" style="display: none" onclick="hide_ssn(false)">Show additional SSN axioms</button>
         </div></div>
 
-        <div class="specterm sosa" id="SOSAhasResultingSample" about="sosa:hasResultingSample" typeof="owl:ObjectProperty">
+<!--        <div class="specterm sosa" id="SOSAhasResultingSample" about="sosa:hasResultingSample" typeof="owl:ObjectProperty">
               <h4>OWL Object Property: <a href="http://www.w3.org/ns/sosa/hasResultingSample">sosa:hasResultingSample</a></h4>
               <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/sosa/hasResultingSample</p>
 
@@ -1698,8 +1609,9 @@ their usage are given.</p>
           <button type="button" class="hide-ssn" onclick="hide_ssn(true)">Hide additional SSN axioms</button>
           <button type="button" class="show-ssn" style="display: none" onclick="hide_ssn(false)">Show additional SSN axioms</button>
         </div></div>
+-->
 
-        <div class="specterm sosa" id="SOSAisSamplingResultOf" about="sosa:isSamplingResultOf" typeof="owl:ObjectProperty">
+<!--        <div class="specterm sosa" id="SOSAisSamplingResultOf" about="sosa:isSamplingResultOf" typeof="owl:ObjectProperty">
               <h4>OWL Object Property: <a href="http://www.w3.org/ns/sosa/isSamplingResultOf">sosa:isSamplingResultOf</a></h4>
               <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/sosa/isSamplingResultOf</p>
 
@@ -1733,6 +1645,7 @@ their usage are given.</p>
           <button type="button" class="hide-ssn" onclick="hide_ssn(true)">Hide additional SSN axioms</button>
           <button type="button" class="show-ssn" style="display: none" onclick="hide_ssn(false)">Show additional SSN axioms</button>
         </div></div>
+-->
 
         <div class="specterm sosa" id="SOSAmadeSampling" about="sosa:madeSampling" typeof="owl:ObjectProperty">
               <h4>OWL Object Property: <a href="http://www.w3.org/ns/sosa/madeSampling">sosa:madeSampling</a></h4>
@@ -1795,7 +1708,7 @@ their usage are given.</p>
       </section>
 
       <section>
-        <h3>Feature of Interest and Properties</h3>
+        <h3>Features of Interest and Properties</h3>
         <p>This section introduces the following classes and properties:</p>
         <div class="azlist">
           <p>
@@ -1813,12 +1726,14 @@ their usage are given.</p>
           </div>
         </div>
 
-        <p>To ease readability, the following figure provides an 
+        <p class="ssn">To ease readability, the following figure provides an 
      overview over the core classes and properties that are specifically 
-    related to modeling features of interest and their properties.</p>
-        <div class="note">
-            More figures describing individual components, classes and their relationships within the final SOSA ontology and the SSN ontology are planned to be included in the final recommendation document.
-        </div>
+    related to modeling Features of interest and their Properties.</p>
+
+        <figure class="ssn">
+          <a href="images/SSN-Features.png"><img alt="Features of interest and properties" src="images/SSN-Features.png"></a>
+          <figcaption>Classes and relationships related to features of interest and properties</figcaption>
+        </figure>
 
         <div class="specterm sosa" id="SOSAFeatureOfInterest" about="sosa:FeatureOfInterest" typeof="owl:Class rdfs:Class">
               <h4>OWL Class: <a href="http://www.w3.org/ns/sosa/FeatureOfInterest">sosa:FeatureOfInterest</a></h4>
@@ -1841,7 +1756,7 @@ their usage are given.</p>
                       <br>
                       <span about="sosa:FeatureOfInterest" rel="rdfs:subClassOf" resource="[_:FeatureOfInterest2]"></span>
                       <span about="[_:FeatureOfInterest2]" typeof="owl:Restriction" rel="owl:onProperty" resource="ssn:hasProperty"><a href="#SSNhasProperty">ssn:hasProperty</a></span>
-                      <span about="[_:FeatureOfInterest2]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SSNProperty">ssn:Property</a></span>
+                      <span about="[_:FeatureOfInterest2]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                       <br>
                       <span about="sosa:FeatureOfInterest" rel="rdfs:subClassOf" resource="[_:FeatureOfInterest3]"></span>
                       <span about="[_:FeatureOfInterest3]" typeof="owl:Restriction" rel="owl:onProperty" resource="sosa:hasSample"><a href="#SOSAhasSample">sosa:hasSample</a></span>
@@ -1931,7 +1846,7 @@ their usage are given.</p>
               <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/ssn/Property</p>
 
             <em property="rdfs:label">Property</em> -
-            <span property="rdfs:comment skos:definition">A quality of a <a href="#SOSAFeatureOfInterest"><code>FeatureOfInterest</code></a>. An aspect of an entity that is intrinsic to and cannot exist without the entity.</span>
+            <span property="rdfs:comment skos:definition">A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity.</span>
             <table style="th { float: top; }">
               <tbody>
                 <tr>
@@ -1963,7 +1878,7 @@ their usage are given.</p>
               <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/ssn/hasProperty</p>
 
             <em property="rdfs:label">has property</em> -
-            <span property="rdfs:comment skos:definition">Relation between a <a href="#SOSAFeatureOfInterest"><code>FeatureOfInterest</code></a> and a <a href="#SSNProperty"><code>Property</code></a> of that feature.</span>
+            <span property="rdfs:comment skos:definition">Relation between an entity and a <a href="#SSNProperty"><code>Property</code></a> of that entity.</span>
             <table style="th { float: top; }">
               <tbody>
                 <tr>
@@ -1994,7 +1909,7 @@ their usage are given.</p>
             <h4>OWL Object Property: <a href="http://www.w3.org/ns/ssn/isPropertyOf">ssn:isPropertyOf</a></h4>
               <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/ssn/isPropertyOf</p>
             <em property="rdfs:label">is property of</em> -
-            <span property="rdfs:comment skos:definition">Relation between a <a href="#SSNProperty"><code>Property</code></a> and the <a href="#SOSAFeatureOfInterest"><code>FeatureOfInterest</code></a> it belongs to.</span>
+            <span property="rdfs:comment skos:definition">Relation between a <a href="#SSNProperty"><code>Property</code></a> and the entity it belongs to.</span>
             <table style="th { float: top; }">
               <tbody>
                 <tr>
@@ -2067,12 +1982,14 @@ their usage are given.</p>
           </div>
         </div>
 
-        <p>To ease readability, the following figure provides an 
+        <p class="ssn">To ease readability, the following figure provides an 
      overview over the core classes and properties that are specifically 
     related to modeling results.</p>
-        <div class="note">
-            More figures describing individual components, classes and their relationships within the final SOSA ontology and the SSN ontology are planned to be included in the final recommendation document.
-        </div>
+
+        <figure class="ssn">
+          <a href="images/SSN-Results.png"><img alt="Results" src="images/SSN-Results.png"></a>
+          <figcaption>Classes and relationships related to results</figcaption>
+        </figure>
 
         <div class="specterm sosa" id="SOSAResult" about="sosa:Result" typeof="owl:Class rdfs:Class">
               <h4>OWL Class: <a href="http://www.w3.org/ns/sosa/Result">sosa:Result</a></h4>
@@ -2090,8 +2007,8 @@ their usage are given.</p>
                   <th>Restriction</th>
                   <td>
                     <span about="sosa:Result" rel="rdfs:subClassOf" resource="[_:SOSAResult1]"></span>
-                    <span about="[_:SOSAResult1]" typeof="owl:Restriction" rel="owl:onProperty" resource="[_:SOSAResult2]"></span>
-                    <span about="[_:SOSAResult2]" rel="owl:inverseOf" resource="sosa:isResultOf"><em><b>inverse Of</b></em> <a href="#SOSAisResultOf">sosa:isResultOf</a></span>
+                    <span about="[_:SOSAResult1]" typeof="owl:Restriction"></span>
+                    <span about="[_:SOSAResult1]" rel="owl:onProperty" resource="sosa:isResultOf"><a href="#SOSAisResultOf">sosa:isResultOf</a></span>
                     <span about="[_:SOSAResult1]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                   </td>
                 </tr>
@@ -2113,11 +2030,11 @@ their usage are given.</p>
                 <tbody>
                   <tr>
                     <th>Domain Includes</th>
-                    <td><span rel="schema:domainIncludes" resource="sosa:Actuation"><a href="#SOSAActuation">sosa:Actuation</a></span>, <span rel="schema:domainIncludes" resource="sosa:Observation"><a href="#SOSAObservation">sosa:Observation</a></span></td>
+                    <td><span rel="schema:domainIncludes" resource="sosa:Actuation"><a href="#SOSAActuation">sosa:Actuation</a></span>, <span rel="schema:domainIncludes" resource="sosa:Observation"><a href="#SOSAObservation">sosa:Observation</a></span>, <span rel="schema:domainIncludes" resource="sosa:Sampling"><a href="#SOSASampling">sosa:Sampling</a></span></td>
                   </tr>
                   <tr>
                     <th>Range Includes</th>
-                    <td><span rel="schema:rangeIncludes" resource="sosa:Result"><a href="#SOSAResult">sosa:Result</a></span></td>
+                    <td><span rel="schema:rangeIncludes" resource="sosa:Result"><a href="#SOSAResult">sosa:Result</a></span>, <span rel="schema:rangeIncludes" resource="sosa:Sample"><a href="#SOSASample">sosa:Sample</a></span></td>
                   </tr>
                   <tr>
                     <th>Inverse property of</th>
@@ -2142,11 +2059,11 @@ their usage are given.</p>
                 <tbody>
                   <tr>
                     <th>Domain Includes</th>
-                    <td><span rel="schema:domainIncludes" resource="sosa:Result"><a href="#SOSAResult">sosa:Result</a></span></td>
+                    <td><span rel="schema:domainIncludes" resource="sosa:Result"><a href="#SOSAResult">sosa:Result</a></span>, <span rel="schema:domainIncludes" resource="sosa:Sample"><a href="#SOSASample">sosa:Sample</a></span></td>
                   </tr>
                   <tr>
                     <th>Range Includes</th>
-                    <td><span rel="schema:rangeIncludes" resource="sosa:Actuation"><a href="#SOSAActuation">sosa:Actuation</a></span>, <span rel="schema:rangeIncludes" resource="sosa:Observation"><a href="#SOSAObservation">sosa:Observation</a></span></td>
+                    <td><span rel="schema:rangeIncludes" resource="sosa:Actuation"><a href="#SOSAActuation">sosa:Actuation</a></span>, <span rel="schema:rangeIncludes" resource="sosa:Observation"><a href="#SOSAObservation">sosa:Observation</a></span>, <span rel="schema:rangeIncludes" resource="sosa:Sampling"><a href="#SOSASampling">sosa:Sampling</a></span></td>
                   </tr>
                   <tr>
                     <th>Inverse property of</th>
@@ -2200,8 +2117,8 @@ their usage are given.</p>
                     <td><span rel="schema:domainIncludes" resource="sosa:Actuation"><a href="#SOSAActuation">sosa:Actuation</a></span>, <span rel="schema:domainIncludes" resource="sosa:Observation"><a href="#SOSAObservation">sosa:Observation</a></span>, <span rel="schema:domainIncludes" resource="sosa:Sampling"><a href="#SOSASampling">sosa:Sampling</a></span></td>
                   </tr>
                   <tr>
-                    <th>Range Includes</th>
-                    <td><span rel="schema:rangeIncludes" resource="xsd:dateTime"><a href="https://www.w3.org/TR/xmlschema-2/#dateTime">xsd:dateTime</a></span></td>
+                    <th>Range</th>
+                    <td><span rel="rdfs:range" resource="xsd:dateTime"><a href="https://www.w3.org/TR/xmlschema-2/#dateTime">xsd:dateTime</a></span></td>
                   </tr>
                 </tbody>
               </table>
@@ -2233,12 +2150,14 @@ their usage are given.</p>
           </div>
         </div>
 
-        <p>To ease readability, the following figure provides an 
+        <p class="ssn">To ease readability, the following figure provides an 
      overview over the core classes and properties that are specifically 
     related to modeling procedures.</p>
-        <div class="note">
-            More figures describing individual components, classes and their relationships within the final SOSA ontology and the SSN ontology are planned to be included in the final recommendation document.
-        </div>
+
+        <figure class="ssn">
+          <a href="images/SSN-Procedures.png"><img alt="Results" src="images/SSN-Procedures.png"></a>
+          <figcaption>Classes and relationships related to procedures</figcaption>
+        </figure>
 
         <div class="specterm sosa" id="SOSAProcedure" about="sosa:Procedure" typeof="owl:Class rdfs:Class">
               <h4>OWL Class: <a href="http://www.w3.org/ns/sosa/Procedure">sosa:Procedure</a></h4>
@@ -2309,7 +2228,7 @@ their usage are given.</p>
                      <span about="[_:SOSAusedProcedure2]" rel="rdf:rest" resource="rdf:nil"></span>
                      <br>
                      <span rel="owl:propertyChainAxiom" resource="[_:SOSAusedProcedure3]"></span>
-                     <span about="[_:SOSAusedProcedure3]" rel="rdf:first" resource="sosa:actuationMadeBy"><a href="#SOSAactuationMadeBy">sosa:actuationMadeBy</a></span> o
+                     <span about="[_:SOSAusedProcedure3]" rel="rdf:first" resource="sosa:madeByActuator"><a href="#SOSAmadeByActuator">sosa:madeByActuator</a></span> o
                      <span about="[_:SOSAusedProcedure3]" rel="rdf:rest" resource="[_:SOSAusedProcedure4]"></span>
                      <span about="[_:SOSAusedProcedure4]" rel="rdf:first" resource="ssn:implements"><a href="#SSNimplements">ssn:implements</a></span>
                      <span about="[_:SOSAusedProcedure4]" rel="rdf:rest" resource="rdf:nil"></span>
@@ -2428,7 +2347,7 @@ their usage are given.</p>
                     <span about="[_:SSNInput2]" typeof="owl:Restriction"></span>
                     <span about="[_:SSNInput2]" rel="owl:onProperty" resource="[_:SSNInput2b]"></span>
                     <span about="[_:SSNInput2b]" rel="owl:inverseOf" resource="sosa:hasInput"><em><b>inverse Of</b></em> <a href="#SSNhasInput">ssn:hasInput</a></span>
-                    <span about="[_:SSNInput2]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSAProcedure">sosa:Procedure</a></span>
+                    <span about="[_:SSNInput2]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                   </td>
                 </tr>
                 <tr>
@@ -2488,7 +2407,7 @@ their usage are given.</p>
                     <span about="[_:SSNOutput2]" typeof="owl:Restriction"></span>
                     <span about="[_:SSNOutput2]" rel="owl:onProperty" resource="[_:SSNOutput2b]"></span>
                     <span about="[_:SSNOutput2b]" rel="owl:inverseOf" resource="sosa:hasOutput"><em><b>inverse Of</b></em> <a href="#SSNhasOutput">ssn:hasOutput</a></span>
-                    <span about="[_:SSNOutput2]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SOSAProcedure">sosa:Procedure</a></span>
+                    <span about="[_:SSNOutput2]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                   </td>
                 </tr>
                 <tr>
@@ -2529,19 +2448,21 @@ their usage are given.</p>
           </div>
         </div>
 
-        <p>To ease readability, the following figure provides an 
+        <p class="ssn">To ease readability, the following figure provides an 
      overview over the core classes and properties that are specifically 
     related to modeling systems and their deployment.</p>
-        <div class="note">
-            More figures describing individual components, classes and their relationships within the final SOSA ontology and the SSN ontology are planned to be included in the final recommendation document.
-        </div>
+
+        <figure class="ssn">
+          <a href="images/SSN-Systems.png"><img alt="Systems and deployment" src="images/SSN-Systems.png"></a>
+          <figcaption>Classes and relationships related to systems and deployments</figcaption>
+        </figure>
 
         <div class="specterm sosa" id="SOSAPlatform" about="sosa:Platform" typeof="owl:Class rdfs:Class">
               <h4>OWL Class: <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a></h4>
               <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/sosa/Platform</p>
 
               <em property="rdfs:label">Platform</em> -
-              <span property="rdfs:comment skos:definition">A <a href="#SOSAPlatform"><code>Platform</code></a> is an entity that <a href="#SOSAhosts"><code>hosts</code></a> other entities, particularly <a href="#SOSASensor"><code>Sensors</code></a>, <a href="#SOSAActuator"><code>Actuators</code></a> and other <a href="#SOSAPlatform"><code>Platforms</code></a>.</span> <br>
+              <span property="rdfs:comment skos:definition">A <a href="#SOSAPlatform"><code>Platform</code></a> is an entity that <a href="#SOSAhosts"><code>hosts</code></a> other entities, particularly <a href="#SOSASensor"><code>Sensors</code></a>, <a href="#SOSAActuator"><code>Actuators</code></a>, <a href="#SOSASampler"><code>Samplers</code></a>, and other <a href="#SOSAPlatform"><code>Platforms</code></a>.</span> <br>
               <table style="th { float: top; }">
                 <tbody>
                   <tr>
@@ -2594,7 +2515,7 @@ their usage are given.</p>
                     <th>Sub property of Chain</th>
                     <td>
                      <span rel="owl:propertyChainAxiom" resource="[_:SOSAhosts1]"></span>
-                     <span about="[_:SOSAhosts1]" rel="rdf:first" resource="ssn:hasDeployment"><a href="#SSNhasDeployment">ssn:hasDeployment</a></span> o
+                     <span about="[_:SOSAhosts1]" rel="rdf:first" resource="ssn:inDeployment"><a href="#SSNinDeployment">ssn:inDeployment</a></span> o
                      <span about="[_:SOSAhosts1]" rel="rdf:rest" resource="[_:SOSAhosts2]"></span>
                      <span about="[_:SOSAhosts2]" rel="rdf:first" resource="ssn:deployedSystem"><a href="#SSNdeployedSystem">ssn:deployedSystem</a></span>
                      <span about="[_:SOSAhosts2]" rel="rdf:rest" resource="rdf:nil"></span>
@@ -2642,7 +2563,7 @@ their usage are given.</p>
               <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/ssn/System</p>
 
             <em property="rdfs:label">System</em> -
-            <span property="rdfs:comment skos:definition">System is a unit of abstraction for pieces of infrastructure that implements <a href="#SOSAProcedure"><code>Procedures</code></a>. A System may have components, its subsystems, which are other Systems.</span>
+            <span property="rdfs:comment skos:definition">System is a unit of abstraction for pieces of infrastructure that implement <a href="#SOSAProcedure"><code>Procedures</code></a>. A System may have components, its subsystems, which are other Systems.</span>
             <table style="th { float: top; }">
               <tbody>
                 <tr>
@@ -2654,8 +2575,8 @@ their usage are given.</p>
                     <span about="[_:System1]" property="owl:allValuesFrom" resource="sosa:Platform"><em><b>must be</b></em> <a href="#SOSAPlatform">sosa:Platform</a></span>
                     <br>
                     <span about="ssn:System" rel="rdfs:subClassOf" resource="[_:System2]"></span>
-                    <span about="[_:System2]" typeof="owl:Restriction" rel="owl:onProperty" resource="[_:System3]"></span>
-                    <span about="[_:System3]" rel="owl:inverseOf" resource="ssn:implements"><em><b>inverse Of</b></em> <a href="#SSNimplements">ssn:implements</a></span>
+                    <span about="[_:System2]" typeof="owl:Restriction"></span>
+                    <span about="[_:System2]" rel="owl:onProperty" resource="ssn:implements"><a href="#SSNimplements">ssn:implements</a></span>
                     <span about="[_:System2]" property="owl:allValuesFrom" resource="sosa:Procedure"><em><b>must be</b></em> <a href="#SOSAProcedure">sosa:Procedure</a></span>
                     <br>
                     <span about="ssn:System" rel="rdfs:subClassOf" resource="[_:System4]"></span>
@@ -2903,12 +2824,14 @@ their usage are given.</p>
           </div>
         </div>
 
-        <p>To ease readability, the following figure provides an 
+        <p class="ssn">To ease readability, the following figure provides an 
      overview over the core classes and properties that are specifically 
     related to modeling conditions.</p>
-        <div class="note">
-            More figures describing individual components, classes and their relationships within the final SOSA ontology and the SSN ontology are planned to be included in the final recommendation document.
-        </div>
+
+        <figure class="ssn">
+          <a href="images/SSN-Conditions.png"><img alt="Conditions" src="images/SSN-Conditions.png"></a>
+          <figcaption>Classes and relationships related to conditions</figcaption>
+        </figure>
 
         <div class="specterm ssn" id="SSNinCondition" about="ssn:inCondition" typeof="owl:ObjectProperty">
             <h4>OWL Object Property: <a href="http://www.w3.org/ns/ssn/inCondition">ssn:inCondition</a></h4>
@@ -3001,12 +2924,14 @@ their usage are given.</p>
           </div>
         </div>
 
-        <p>To ease readability, the following figure provides an 
+        <p class="ssn">To ease readability, the following figure provides an 
      overview over the core classes and properties that are specifically 
-    related to modeling system capabilities.</p>
-        <div class="note">
-            More figures describing individual components, classes and their relationships within the final SOSA ontology and the SSN ontology are planned to be included in the final recommendation document.
-        </div>
+    related to modeling system capabilities, as well as operating ranges and survival ranges presented in the following sections.</p>
+
+        <figure class="ssn">
+          <a href="images/SSN-System-Properties.png"><img alt="System properties" src="images/SSN-System-Properties.png"></a>
+          <figcaption>Classes and relationships related to system capabilities, operating ranges and survival ranges</figcaption>
+        </figure>
 
         <div class="specterm ssn" id="SSNhasSystemCapability" about="ssn:hasSystemCapability" typeof="owl:ObjectProperty">
             <h4>OWL Object Property: <a href="http://www.w3.org/ns/ssn/hasSystemCapability">ssn:hasSystemCapability</a></h4>
@@ -3073,7 +2998,7 @@ their usage are given.</p>
                     <span about="ssn:SystemCapability" rel="rdfs:subClassOf" resource="[_:SystemCapabilities4]"></span>
                     <span about="[_:SystemCapabilities4]" typeof="owl:Restriction"></span>
                     <span about="[_:SystemCapabilities4]" rel="owl:onProperty" resource="ssn:inCondition"><a href="#SSNinCondition">ssn:inCondition</a></span>
-                    <span about="[_:SystemCapabilities4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SSNCondition">ssn:Condition</a></span>
+                    <span about="[_:SystemCapabilities4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                     <br>
                     <span about="ssn:SystemCapability" rel="rdfs:subClassOf" resource="[_:SystemCapabilities5]"></span>
                     <span about="[_:SystemCapabilities5]" typeof="owl:Restriction"></span>
@@ -3150,7 +3075,7 @@ their usage are given.</p>
                     <span about="[_:SSNSystemProperty3]" typeof="owl:Restriction"></span>
                     <span about="[_:SSNSystemProperty3]" rel="owl:onProperty" resource="[_:SSNSystemProperty4]"></span>
                     <span about="[_:SSNSystemProperty4]" rel="owl:inverseOf" resource="ssn:hasSystemProperty"><em><b>inverse Of</b></em> <a href="#SSNhasSystemProperty">ssn:hasSystemProperty</a></span>
-                    <span about="[_:SSNSystemProperty3]" content="1" datatype="xsd:nonNegativeInteger" property="owl:minCardinality"><em><b>must be at least 1</b></em> <a href="#SSNSystemCapability">ssn:SystemCapability</a></span>
+                    <span about="[_:SSNSystemProperty3]" content="1" datatype="xsd:nonNegativeInteger" property="owl:minCardinality"><em><b>must be at least 1</b></em></span>
                   </td>
                 </tr>
                 <tr>
@@ -3626,13 +3551,6 @@ their usage are given.</p>
           </div>
         </div>
 
-        <p>To ease readability, the following figure provides an 
-     overview over the core classes and properties that are specifically 
-    related to modeling operating ranges of systems.</p>
-        <div class="note">
-            More figures describing individual components, classes and their relationships within the final SOSA ontology and the SSN ontology are planned to be included in the final recommendation document.
-        </div>
-
         <div class="specterm ssn" id="SSNhasOperatingRange" about="ssn:hasOperatingRange" typeof="owl:ObjectProperty">
             <h4>OWL Object Property: <a href="http://www.w3.org/ns/ssn/hasOperatingRange">ssn:hasOperatingRange</a></h4>
               <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/ssn/hasOperatingRange</p>
@@ -3695,7 +3613,7 @@ their usage are given.</p>
                     <span about="ssn:OperatingRange" rel="rdfs:subClassOf" resource="[_:OperatingRange4]"></span>
                     <span about="[_:OperatingRange4]" typeof="owl:Restriction"></span>
                     <span about="[_:OperatingRange4]" rel="owl:onProperty" resource="ssn:inCondition"><a href="#SSNinCondition">ssn:inCondition</a></span>
-                    <span about="[_:OperatingRange4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="#SSNCondition">ssn:Condition</a></span>
+                    <span about="[_:OperatingRange4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                     <br>
                     <span about="ssn:OperatingRange" rel="rdfs:subClassOf" resource="[_:OperatingRange5]"></span>
                     <span about="[_:OperatingRange5]" typeof="owl:Restriction"></span>
@@ -3772,7 +3690,7 @@ their usage are given.</p>
                     <span about="[_:SSNOperatingProperty3]" typeof="owl:Restriction"></span>
                     <span about="[_:SSNOperatingProperty3]" rel="owl:onProperty" resource="[_:SSNOperatingProperty4]"></span>
                     <span about="[_:SSNOperatingProperty4]" rel="owl:inverseOf" resource="ssn:hasOperatingProperty"><em><b>inverse Of</b></em> <a href="#SSNhasOperatingProperty">ssn:hasOperatingProperty</a></span>
-                    <span about="[_:SSNOperatingProperty3]" content="1" datatype="xsd:nonNegativeInteger" property="owl:minCardinality"><em><b>must be at least 1</b></em> <a href="#SSNOperatingRange">ssn:OperatingRange</a></span>
+                    <span about="[_:SSNOperatingProperty3]" content="1" datatype="xsd:nonNegativeInteger" property="owl:minCardinality"><em><b>must be at least 1</b></em></span>
                   </td>
                 </tr>
                 <tr>
@@ -3866,13 +3784,6 @@ their usage are given.</p>
           </div>
         </div>
 
-        <p>To ease readability, the following figure provides an 
-     overview over the core classes and properties that are specifically 
-    related to modeling survival ranges of systems.</p>
-        <div class="note">
-            More figures describing individual components, classes and their relationships within the final SOSA ontology and the SSN ontology are planned to be included in the final recommendation document.
-        </div>
-
         <div class="specterm ssn" id="SSNhasSurvivalRange" about="ssn:hasSurvivalRange" typeof="owl:ObjectProperty">
             <h4>OWL Object Property: <a href="http://www.w3.org/ns/ssn/hasSurvivalRange">ssn:hasSurvivalRange</a></h4>
               <p class="crossreference"><strong>IRI:</strong> http://www.w3.org/ns/ssn/hasSurvivalRange</p>
@@ -3935,7 +3846,7 @@ their usage are given.</p>
                     <span about="ssn:SurvivalRange" rel="rdfs:subClassOf" resource="[_:SurvivalRange4]"></span>
                     <span about="[_:SurvivalRange4]" typeof="owl:Restriction"></span>
                     <span about="[_:SurvivalRange4]" rel="owl:onProperty" resource="ssn:inCondition"><a href="#SSNinCondition">ssn:inCondition</a></span>
-                    <span about="[_:SurvivalRange4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em> <a href="http://www.w3.org/ns/ssn/Condition">ssn:Condition</a></span>
+                    <span about="[_:SurvivalRange4]" property="owl:minCardinality" content="1" datatype="xsd:nonNegativeInteger"><em><b>must be at least 1</b></em></span>
                     <br>
                     <span about="ssn:SurvivalRange" rel="rdfs:subClassOf" resource="[_:SurvivalRange5]"></span>
                     <span about="[_:SurvivalRange5]" typeof="owl:Restriction"></span>
@@ -4012,7 +3923,7 @@ their usage are given.</p>
                     <span about="[_:SSNSurvivalProperty3]" typeof="owl:Restriction"></span>
                     <span about="[_:SSNSurvivalProperty3]" rel="owl:onProperty" resource="[_:SSNSurvivalProperty4]"></span>
                     <span about="[_:SSNSurvivalProperty4]" rel="owl:inverseOf" resource="ssn:hasSurvivalProperty"><em><b>inverse Of</b></em> <a href="#SSNhasSurvivalProperty">ssn:hasSurvivalProperty</a></span>
-                    <span about="[_:SSNSurvivalProperty3]" content="1" datatype="xsd:nonNegativeInteger" property="owl:minCardinality"><em><b>must be at least 1</b></em> <a href="#SSNSurvivalRange">ssn:SurvivalRange</a></span>
+                    <span about="[_:SSNSurvivalProperty3]" content="1" datatype="xsd:nonNegativeInteger" property="owl:minCardinality"><em><b>must be at least 1</b></em></span>
                   </td>
                 </tr>
                 <tr>
@@ -4518,11 +4429,7 @@ their usage are given.</p>
                 owl:allValuesFrom oldssn:Output ]</td>
             </tr>
             <tr>
-              <td rowspan="13"> oldssn:Observation </td>
-              <td> equivalent class </td>
-              <td> sosa:Observation</td>
-            </tr>
-            <tr>
+              <td rowspan="12"> oldssn:Observation </td>
               <td> subclass of </td>
               <td> [ a owl:Restriction ; owl:onProperty oldssn:featureOfInterest
                 ; owl:allValuesFrom oldssn:FeatureOfInterest ]</td>
@@ -5117,11 +5024,6 @@ their usage are given.</p>
                 <td> equivalent property </td>
                 <td> sosa:isSampleOf </td>
               </tr>
-              <tr>
-                <td> iso19156-sp:SF_Specimen.processingDetails </td>
-                <td> equivalent property </td>
-                <td> sosa:isSamplingResultOf </td>
-              </tr>
             </tbody>
           </table>
           <p>Additional alignments from O&amp;M properties to SOSA are as
@@ -5158,10 +5060,15 @@ their usage are given.</p>
                 <td> sub-property of </td>
                 <td> sosa:resultTime </td>
               </tr>
+              <tr>
+                <td> iso19156-sp:SF_Specimen.processingDetails </td>
+                <td> sub-property of </td>
+                <td> sosa:isResultOf </td>
+              </tr>
             </tbody>
           </table>
           <p>These are modeled as sub-properties because sosa:usedProcedure,
-            sosa:hasResult and sosa:resultTime applies to actuation, observation
+            sosa:hasResult, sosa:isResultOf and sosa:resultTime applies to actuation, observation
             or sampling activities. </p>
           <table>
             <tbody>
@@ -5216,10 +5123,11 @@ their usage are given.</p>
             oboe:Measurement concerns a distinct observed-property
             ("characteristic") and uses a distinct procedure ("protocol"). We
             therefore choose to align sosa:Observation with oboe:Measurement.</p>
-          <figure> <img alt="OBOE core classes" src="images/OBOE-core.png" height="400">
-            <img alt="SOSA Observation" src="images/SOSA-obs-core.png" height="300">
-            <figcaption>Core classes from OBOE alongside the SOSA
-              observation model.</figcaption></figure>
+          <figure>
+            <a href="images/OBOE-core.png"><img alt="OBOE core classes" src="images/OBOE-core.png" height="400"></a>
+            <a href="images/SOSA-obs-core.png"><img alt="SOSA Observation" src="images/SOSA-obs-core.png" height="300"></a>
+            <figcaption>Core classes from OBOE alongside the SOSA observation model.</figcaption>
+          </figure>
           <p>The primary classes from [[OBOE]] are aligned with SOSA classes as
             follows.</p>
           <table>
@@ -5330,8 +5238,12 @@ their usage are given.</p>
       <h3>PROV Alignment Module</h3>
       <p>This section introduces the alignment of SOSA to W3C <a href="https://www.w3.org/TR/prov-overview/">PROV</a>.</p>
       <p>The underlying structure of <a href="https://www.w3.org/TR/prov-dm/">PROV</a> is based around a process-flow model, with three base classes: <a href="https://www.w3.org/TR/prov-o/#Entity">Entity</a> - which is the class of physical, digital, conceptual, or other kinds of things with some fixed aspects, <a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a> - which is the class of things that occur over a period of time and act upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities, and <a href="https://www.w3.org/TR/prov-o/#Agent">Agent</a> - the class of things that bear some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.</p>
-      <figure><img src="images/prov-o.png" alt="PROV-O" width="350"/> <img src="images/observation-prov.png" alt="Observation PROV-O" width="350"/> <img src="images/actuation-prov.png" alt="Actuation PROV-O" width="350"/> <img src="images/sampling-prov.png" alt="Sampling PROV-O" width="350"/>
-          <figcaption>Core PROV classes and some of the properties that relate them, shown alongside the core SOSA structure for observation, actuation and sampling. Classes generally aligned with prov:Entity in yellow ellipses; with prov:Activity in purple boxes; with prov:Agent in orange boxes.</figcaption>
+      <figure>
+        <a href="images/prov-o.png"><img src="images/prov-o.png" alt="PROV-O" width="350"/></a>
+        <a href="images/observation-prov.png"><img src="images/observation-prov.png" alt="Observation PROV-O" width="350"/></a>
+        <a href="images/actuation-prov.png"><img src="images/actuation-prov.png" alt="Actuation PROV-O" width="350"/></a>
+        <a href="images/sampling-prov.png"><img src="images/sampling-prov.png" alt="Sampling PROV-O" width="350"/></a>
+        <figcaption>Core PROV classes and some of the properties that relate them, shown alongside the core SOSA structure for observation, actuation and sampling. Classes generally aligned with prov:Entity in yellow ellipses; with prov:Activity in purple boxes; with prov:Agent in orange boxes.</figcaption>
       </figure>
 
       <p>The SOSA/SSN ontologies conceive observations, actuations, and acts of sampling as activities or events, that result in information being produced, or a change in the world, or the production or transformation of a sample. 
@@ -5449,7 +5361,7 @@ their usage are given.</p>
         <table>
           <tbody>
             <tr>
-              <td> sosa:actuationMadeBy </td>
+              <td> sosa:madeByActuator </td>
               <td> subproperty of </td>
               <td> prov:wasAssociatedWith </td>
             </tr>
@@ -5562,8 +5474,10 @@ their usage are given.</p>
         </p>
         <p>An <a href="https://github.com/w3c/sdw/blob/gh-pages/ssn/rdf/sample-relations.ttl">ontology
             graph for this is available</a>. </p>
-        <figure><img alt="Sample relationships" src="images/sample-relationships.png">
-          <figcaption>Model of sample relationships</figcaption></figure>
+        <figure>
+          <a href="images/sample-relationships.png"><img alt="Sample relationships" src="images/sample-relationships.png"></a>
+          <figcaption>Model of sample relationships</figcaption>
+        </figure>
         <section id="sample_relationships_def">
         <h4 id="SAMPglance">Sample Relationships Specification</h4>
         <p>An a-z index of <em>sampling</em> terms, by class (categories or
@@ -5796,17 +5710,18 @@ their usage are given.</p>
                 sosa:isActedOnBy</li>
               <li>Added madeBySensor property</li>
               <li>Renamed invokes and invokedBy to madeActuation and
-                actuationMadeBy</li>
+                madeByActuator</li>
               <li>Changed hostedBy to isHostedBy</li>
               <li>Added Sampler (device) and Sampling (act) to SOSA</li>
               <li>Added madeSampling and madeBySampler properties</li>
-              <li>Added hasResultingSample and its inverse property
-                isSamplingResultOf</li>
+<!--              <li>Added hasResultingSample and its inverse property
+                isSamplingResultOf</li> -->
+              <li>Added Sample to range of hasResult, and to domain or isResultOf</li>
               <li>Added hasSimpleResult and hasResult instead of hasValue</li>
               <li>Added ObservableProperty and ActuatableProperty</li>
               <li>Changed rdfs:comment and skos:definition of sosa:Platform</li>
               <li>Refined sosa:Result</li>
-              <li>Changed sosa:madeByActuator to sosa:actuationMadeBy</li>
+              <li>Changed sosa:madeByActuator to sosa:madeByActuator</li>
               <li>Added schema:domainIncludes sosa:Sampling to
                 sosa:observedProperty</li>
               <li>Added schema:rangeIncludes time:TemporalEntity and
@@ -5920,9 +5835,9 @@ their usage are given.</p>
               <li>Added Property Restrictions to SOSA:ActuatableProperty for
                 sosa:isActedOnBy</li>
               <li>Added Property Restrictions to SOSA:Actuation for
-                sosa:actuationMadeBy, sosa:hasFeatureOfInterest, sosa:hasResult,
+                sosa:madeByActuator, sosa:hasFeatureOfInterest, sosa:hasResult,
                 sosa:resultTime, sosa:usedProcedure, sosa:hasFeatureOfInterest
-                and sosa:actuationMadeBy </li>
+                and sosa:madeByActuator </li>
               <li>Added ssn:ActuationRange Class</li>
               <li>Added Property Restrictions to sosa:Actuator for
                 ssn:implements, ssn:forProperty and sosa:MadeActuation and
